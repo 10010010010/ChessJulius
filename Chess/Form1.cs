@@ -91,24 +91,13 @@ namespace Chess
             g.FillRectangle(red,(x-1)*50,(y-1)*50,50,50);
             pawnGraphics pg = new pawnGraphics();
             pg.drawPawn(sender,e,0,0, Color.Black);
-           
             
-              
-            
-           
-          
-
-            
-            
-
-
         }
       
         private void gameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-        gameTimer.Interval = 500;
-        gameTimer.Enabled = true;
-        panel1.Invalidate();
+            gameTimer.Interval = 100;
+            panel1.Invalidate();
         
 
         }
