@@ -19,9 +19,11 @@ namespace Chess
         
         public void drawPawn(object sender,PaintEventArgs e, int x, int y, Color color)
         {
+            
+            Bitmap pawn = new Bitmap(@"C:\\Users\\Juliu\\RiderProjects\\Chess\\Chess\\Images\\chess-26774.png");
             Graphics g = e.Graphics;
             Brush Brush = new SolidBrush(color);
-           g.DrawImage(@"Chess/ChessKingBlack.png", x,y,50,50);
+           g.DrawImage(pawn, 50, y, 50, 50);
             Form1.pubBoard[x, y] = 1;
             
           

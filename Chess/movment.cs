@@ -9,7 +9,6 @@ namespace Chess
      
         public void pieceMovment(object sender,  MouseEventArgs e)
         {
-            //check if left mouse button is down 
             
          
 

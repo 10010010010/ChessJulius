@@ -90,7 +90,7 @@ namespace Chess
             g.DrawImage(boardMap,0,0);
             g.FillRectangle(red,(x-1)*50,(y-1)*50,50,50);
             pawnGraphics pg = new pawnGraphics();
-            pg.drawPawn(sender,e,0,0, Color.Black);
+            pg.drawPawn(sender,e,0,1, Color.Black);
             
         }
       
