@@ -170,12 +170,12 @@ namespace Chess
 
         private void panel1_MouseClick(object sender, MouseEventArgs e)
         {  Brush brush = new SolidBrush(Color.Red);
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i <= 8; i++)
             {
                 
-                for (int j = 0; j < 8; j++)
+                for (int j = 0; j <= 8; j++)
                 {
-                    if ((i - 1) * 50 < e.X && e.X < i * 50 && (j - 1) * 50 < e.Y && e.Y < j * 50)
+                    if ((i-1) * 50 < e.X && e.X < i * 50 && (j-1)* 50 < e.Y && e.Y < j * 50)
                     {
                         y = j;
                         x = i;
