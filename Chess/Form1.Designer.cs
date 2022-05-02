@@ -31,11 +31,14 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.gameTimer = new System.Timers.Timer();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.gameTimer)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(6, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(793, 445);
@@ -50,6 +53,16 @@
             this.gameTimer.SynchronizingObject = this;
             this.gameTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.gameTimer_Elapsed);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(610, 72);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 55);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -58,9 +71,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.gameTimer)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.Panel panel1;
         private System.Timers.Timer gameTimer;

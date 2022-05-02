@@ -47,16 +47,21 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="bishop.cs" />
         <Compile Include="Form1.cs">
             <SubType>Form</SubType>
         </Compile>
         <Compile Include="Form1.Designer.cs">
             <DependentUpon>Form1.cs</DependentUpon>
         </Compile>
+        <Compile Include="king.cs" />
+        <Compile Include="knight.cs" />
         <Compile Include="movment.cs" />
         <Compile Include="pawn.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="queen.cs" />
+        <Compile Include="rook.cs" />
         <EmbeddedResource Include="Form1.resx">
           <DependentUpon>Form1.cs</DependentUpon>
         </EmbeddedResource>
@@ -81,6 +86,44 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="..\..\..\Pictures\gameImg\chess-26774.png">
+        <Link>gameImg\chess-26774.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_bishop_black.png">
+        <Link>gameImg\chess_bishop_black.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_bishop_white.png">
+        <Link>gameImg\chess_bishop_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\Chess_king_black.png">
+        <Link>gameImg\Chess_king_black.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_king_white.png">
+        <Link>gameImg\chess_king_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_knigh_white.png">
+        <Link>gameImg\chess_knigh_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_queen_black.png">
+        <Link>gameImg\chess_queen_black.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_queen_white.png">
+        <Link>gameImg\chess_queen_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_rook_black.png">
+        <Link>gameImg\chess_rook_black.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_rook_white.png">
+        <Link>gameImg\chess_rook_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\pawn_white.png">
+        <Link>gameImg\pawn_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\pwan_black.png">
+        <Link>gameImg\pwan_black.png</Link>
+      </Content>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

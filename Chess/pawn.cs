@@ -4,32 +4,47 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Chess;
+
 namespace Chess
 {
-    class pawnGraphics
+    class pawn
     {
-     private static int reach = 1;
-
+        private static int reach = 1;
+        private static int pawnValueWhite=2;
+        private static int pawnValueBlack=1;
+        
+        public static int pawnWhiteValue
+        {
+            get { return pawnValueWhite; }
+            set { pawnValueWhite = value; }
+        }
+        
+        public static int pawnBlackValue{
+            get { return pawnValueBlack; }
+            set { pawnValueBlack = value; }
+        }
+        
         public static int pawnReach
         {
-            get { return reach;}
+            get { return reach; }
             set { reach = value; }
-
         }
-        
-        public void drawPawn(object sender,PaintEventArgs e, int x, int y, Color color)
+
+        public static void drawPawn( PaintEventArgs e, int x, int y)
         {
-            
-            Bitmap pawn = new Bitmap(@"C:\\Users\\Juliu\\RiderProjects\\Chess\\Chess\\Images\\chess-26774.png");
             Graphics g = e.Graphics;
-            Brush Brush = new SolidBrush(color);
-           g.DrawImage(pawn, 50, y, 50, 50);
-            Form1.pubBoard[x, y] = 1;
-            
-          
 
+            if (Form1.pubBoard[x,y]==pawnWhiteValue)
+            {
+                g.DrawImage(Image.FromFile(@"C:\Users\Juliu\Pictures\gameImg\pawn_white.png"), x*50, y*50,50,50);
+               
+            }
+            else if (Form1.pubBoard[x,y]==pawnValueBlack)
+            
+                g.DrawImage(Image.FromFile(@"C:\Users\Juliu\Pictures\gameImg\pwan_black.png"), x*50, y*50,50,50);
+                
+            }
+
+            
         }
-        
-        
     }
-}
