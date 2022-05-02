@@ -9,44 +9,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
-#nullable  enable
+
+#nullable enable
 namespace Chess
 {
     public partial class Form1 : Form
     {
         private static int?[,] Board = new int?[8, 8];
-        private static char?[,] pieces = new char?[8, 8];
-        public int x;
-        public int y;
-        public static Bitmap boardMap = new Bitmap(400,400);
-        
-      
+        private int x;
+        private int y;
+        public static Bitmap boardMap = new Bitmap(400, 400);
+        public int moveCounter = 0;
+
         public static int?[,] pubBoard
         {
             get { return Board; }
             set { Board = value; }
-            
         }
-        public static char?[,] pubPieces
-        {
-            get { return pieces; }
-            set { pieces = value; }
-        }
+
         public Form1()
         {
             InitializeComponent();
             gameTimer.Start();
             panel1.Width = 1000;
             panel1.Height = 1000;
-            
         }
 
         public static void board(object sender, EventArgs e)
         {
             using (Graphics g = Graphics.FromImage(boardMap))
-            {       
-
-                
+            {
                 Pen Black = new Pen(Color.Black, 2);
                 Pen white = new Pen(Color.Bisque, 2);
                 Brush black = new SolidBrush(Color.Brown);
@@ -58,18 +50,14 @@ namespace Chess
                     g.DrawRectangle(Black, 0, 0, 400, 400);
                     for (int j = 0; j < 8; j++)
                     {
-
                         if (i % 2 == 0 && j % 2 != 0)
                         {
                             g.FillRectangle(black, i * 50, j * 50, 50, 50);
-
                         }
                         else if (i % 2 != 0 && j % 2 == 0)
                         {
                             g.FillRectangle(black, i * 50, j * 50, 50, 50);
-
                         }
-
                     }
                 }
             }
@@ -78,111 +66,106 @@ namespace Chess
         public static void playerPawns(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            
-            
+
+
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
                     if (Board[i, j] != null)
                     {
-                        switch (Board[i,j])
+                        switch (Board[i, j])
                         {
                             case 1:
-                                pawn.drawPawn(e,i,j);
+                                pawn.drawPawn(e, i, j);
                                 break;
                             case 2:
-                                pawn.drawPawn(e,i,j);
+                                pawn.drawPawn(e, i, j);
                                 break;
                             case 3:
-                                bishop.drawBishop(e,i,j);
+                                bishop.drawBishop(e, i, j);
                                 break;
-                            case 4 :
-                                bishop.drawBishop(e,i,j);
+                            case 4:
+                                bishop.drawBishop(e, i, j);
                                 break;
                             case 5:
-                                knight.drawknight(e,i,j);
+                                knight.drawknight(e, i, j);
                                 break;
                             case 6:
-                                knight.drawknight(e,i,j);
+                                knight.drawknight(e, i, j);
                                 break;
                             case 7:
-                                rook.drawRook(e,i,j);
+                                rook.drawRook(e, i, j);
                                 break;
                             case 8:
-                                rook.drawRook(e,i,j);
+                                rook.drawRook(e, i, j);
                                 break;
                             case 9:
-                                queen.drawQueen(e,i,j);
+                                queen.drawQueen(e, i, j);
                                 break;
                             case 10:
-                                queen.drawQueen(e,i,j);
+                                queen.drawQueen(e, i, j);
                                 break;
                             case 11:
-                                king.drawKing(e,i,j);
+                                king.drawKing(e, i, j);
                                 break;
                             case 12:
-                                king.drawKing(e,i,j);
+                                king.drawKing(e, i, j);
                                 break;
-                            
-
                         }
-
-                        
-
-
                     }
                 }
-                
             }
-            
-            
-            
         }
-        
-        
-        
-        
+
+
         private void panel1_Paint(object sender, PaintEventArgs e)
-        { Brush red = new SolidBrush(Color.Red);
+        {
+            Brush red = new SolidBrush(Color.Red);
             Graphics g = e.Graphics;
-            g.DrawImage(boardMap,0,0);
-            g.FillRectangle(red,(x-1)*50,(y-1)*50,50,50);
+            g.DrawImage(boardMap, 0, 0);
+            if (movment.X1.Count > 0 && movment.Y1.Count > 0 && moveCounter % 2 == 1)
+            {
+                g.FillRectangle(red, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
+            }
+            else if ((movment.X1.Count > 0 && movment.Y1.Count > 0 && moveCounter % 2 == 0))
+            {
+                g.FillRectangle(red, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
+            }
+
             this.BackColor = Color.Bisque;
             playerPawns(e);
-            
-            
         }
-      
+
         private void gameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            gameTimer.Interval = 200;
+            gameTimer.Interval = 500;
             panel1.Invalidate();
-        
-
         }
 
-  
+
         private void panel1_Click(object sender, EventArgs e)
         {
-          
         }
 
         private void panel1_MouseClick(object sender, MouseEventArgs e)
-        {  Brush brush = new SolidBrush(Color.Red);
+        {
+            Brush brush = new SolidBrush(Color.Red);
+            if (movment.X1.Count > 1 && movment.Y1.Count > 1 && moveCounter % 2 == 0)
+            {
+                movment mvnt = new movment();
+                mvnt.pieceMovment();
+            }
+
             for (int i = 0; i <= 8; i++)
             {
-                
                 for (int j = 0; j <= 8; j++)
                 {
-                    if ((i-1) * 50 < e.X && e.X < i * 50 && (j-1)* 50 < e.Y && e.Y < j * 50)
+                    if ((i - 1) * 50 < e.X && e.X < i * 50 && (j - 1) * 50 < e.Y && e.Y < j * 50)
                     {
-                        y = j;
-                        x = i;
-                        
-
+                        movment.Y1.Add(j);
+                        movment.X1.Add(i);
                     }
-                   
                 }
             }
         }
@@ -222,11 +205,6 @@ namespace Chess
             Board[3, 7] = queen.WhiteQueenValue;
             Board[4, 0] = king.KingValueBlack;
             Board[4, 7] = king.KingValueWhite;
-
-            
-            
-            
         }
     }
-    
 }

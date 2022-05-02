@@ -1,4 +1,7 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Chess;
 
@@ -6,13 +9,30 @@ namespace Chess
 {
     public class movment
     {
-     
-        public void pieceMovment(object sender,  MouseEventArgs e)
+        public static List<int> X1
         {
-            
-         
+            get => X;
+            set => X = value;
+        }
 
-          
+        public static List<int> Y1
+        {
+            get => Y;
+            set => Y = value;
+        }
+
+        private static List<int> X = new List<int>();
+        private static List<int> Y = new List<int>();
+        public void pieceMovment()
+        {
+            int?[,] temp = new int?[1,1];
+            Form1.pubBoard[X.Last(), Y.Last()] = temp[0,0];
+            Form1.pubBoard[X.Last(), Y.Last()] = Form1.pubBoard[X.Last() - 1, Y.Last() - 1];
+            temp[0, 0] = Form1.pubBoard[X.Last(), Y.Last()];
+
+
+
+
         }
     }
 }

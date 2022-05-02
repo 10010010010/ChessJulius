@@ -43,7 +43,7 @@ namespace Chess
             
                 g.DrawImage(Image.FromFile(@"C:\Users\Juliu\Pictures\gameImg\pwan_black.png"), x*50, y*50,50,50);
                 
-            }
+        }
 
             
         }
