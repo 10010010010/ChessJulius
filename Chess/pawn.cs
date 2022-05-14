@@ -41,7 +41,7 @@ namespace Chess
             }
             else if (Form1.pubBoard[x,y]==pawnValueBlack)
             
-                g.DrawImage(Image.FromFile("\\GameImages\\pawn.cs"), x*50, y*50,50,50);
+                g.DrawImage(Image.FromFile(), x*50, y*50,50,50);
                 
         }
 

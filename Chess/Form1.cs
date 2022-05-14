@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Chess
         private int y;
         public static Bitmap boardMap = new Bitmap(400, 400);
         public int moveCounter = 0;
-        public string projectDir= Environment.CurrentDirectory.
+        public string projectDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
 
         public static int?[,] pubBoard
         {
