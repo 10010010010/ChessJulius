@@ -36,12 +36,12 @@ namespace Chess
 
             if (Form1.pubBoard[x,y]==pawnWhiteValue)
             {
-                g.DrawImage(Image.FromFile(@"C:\Users\Juliu\Pictures\gameImg\pawn_white.png"), x*50, y*50,50,50);
+                g.DrawImage(Image.FromFile("\\GameImages\\pawn_white.png"), x*50, y*50,50,50);
                
             }
             else if (Form1.pubBoard[x,y]==pawnValueBlack)
             
-                g.DrawImage(Image.FromFile(@"C:\Users\Juliu\Pictures\gameImg\pwan_black.png"), x*50, y*50,50,50);
+                g.DrawImage(Image.FromFile("\\GameImages\\pawn.cs"), x*50, y*50,50,50);
                 
         }
 

@@ -20,6 +20,7 @@ namespace Chess
         private int y;
         public static Bitmap boardMap = new Bitmap(400, 400);
         public int moveCounter = 0;
+        public string projectDir= Environment.CurrentDirectory.
 
         public static int?[,] pubBoard
         {
@@ -67,7 +68,7 @@ namespace Chess
         {
             Graphics g = e.Graphics;
 
-
+//sätt till if(Board[i,j]%2==0) för att dela upp vita ich svarta
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
@@ -173,7 +174,7 @@ namespace Chess
         private void button1_Click(object sender, EventArgs e)
         {
             board(this, EventArgs.Empty);
-            Board[0, 1] = pawn.pawnBlackValue;
+          /*  Board[0, 1] = pawn.pawnBlackValue;
             Board[1, 1] = pawn.pawnBlackValue;
             Board[2, 1] = pawn.pawnBlackValue;
             Board[3, 1] = pawn.pawnBlackValue;
@@ -182,7 +183,7 @@ namespace Chess
             Board[6, 1] = pawn.pawnBlackValue;
             Board[7, 1] = pawn.pawnBlackValue;
             Board[2, 0] = bishop.BishopValueBlack;
-            Board[5, 0] = bishop.BishopValueBlack;
+            Board[5, 0] = bishop.BishopValueBlack;*/
             Board[0, 6] = pawn.pawnWhiteValue;
             Board[1, 6] = pawn.pawnWhiteValue;
             Board[2, 6] = pawn.pawnWhiteValue;
@@ -191,7 +192,7 @@ namespace Chess
             Board[5, 6] = pawn.pawnWhiteValue;
             Board[6, 6] = pawn.pawnWhiteValue;
             Board[7, 6] = pawn.pawnWhiteValue;
-            Board[2, 7] = bishop.BishopValueWhite;
+        /*    Board[2, 7] = bishop.BishopValueWhite;
             Board[5, 7] = bishop.BishopValueWhite;
             Board[1, 7] = knight.KnightWhiteValue;
             Board[6, 7] = knight.KnightWhiteValue;
@@ -204,7 +205,7 @@ namespace Chess
             Board[3, 0] = queen.BlackQueenValue;
             Board[3, 7] = queen.WhiteQueenValue;
             Board[4, 0] = king.KingValueBlack;
-            Board[4, 7] = king.KingValueWhite;
+            Board[4, 7] = king.KingValueWhite;*/
         }
     }
 }
