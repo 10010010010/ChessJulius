@@ -2,7 +2,19 @@
 <project version="4">
   <component name="UserContentModel">
     <attachedFolders />
-    <explicitIncludes />
+    <explicitIncludes>
+      <Path>gameImg/Chess_king_black.png</Path>
+      <Path>gameImg/chess-26774.png</Path>
+      <Path>gameImg/chess_bishop_black.png</Path>
+      <Path>gameImg/chess_bishop_white.png</Path>
+      <Path>gameImg/chess_king_white.png</Path>
+      <Path>gameImg/chess_knigh_white.png</Path>
+      <Path>gameImg/chess_queen_black.png</Path>
+      <Path>gameImg/chess_queen_white.png</Path>
+      <Path>gameImg/chess_rook_black.png</Path>
+      <Path>gameImg/chess_rook_white.png</Path>
+      <Path>gameImg/pawn_white.png</Path>
+    </explicitIncludes>
     <explicitExcludes />
   </component>
 </project>

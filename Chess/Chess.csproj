@@ -88,18 +88,42 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
-      <Content Include="GameImges\chess-26774.png" />
-      <Content Include="GameImges\chess_bishop_black.png" />
-      <Content Include="GameImges\chess_bishop_white.png" />
-      <Content Include="GameImges\Chess_king_black.png" />
-      <Content Include="GameImges\chess_king_white.png" />
-      <Content Include="GameImges\chess_knigh_white.png" />
-      <Content Include="GameImges\chess_queen_black.png" />
-      <Content Include="GameImges\chess_queen_white.png" />
-      <Content Include="GameImges\chess_rook_black.png" />
-      <Content Include="GameImges\chess_rook_white.png" />
-      <Content Include="GameImges\pawn_white.png" />
-      <Content Include="GameImges\pwan_black.png" />
+      <Content Include="..\..\..\Pictures\gameImg\chess-26774.png">
+        <Link>gameImg\chess-26774.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_bishop_black.png">
+        <Link>gameImg\chess_bishop_black.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_bishop_white.png">
+        <Link>gameImg\chess_bishop_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\Chess_king_black.png">
+        <Link>gameImg\Chess_king_black.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_king_white.png">
+        <Link>gameImg\chess_king_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_knigh_white.png">
+        <Link>gameImg\chess_knigh_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_queen_black.png">
+        <Link>gameImg\chess_queen_black.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_queen_white.png">
+        <Link>gameImg\chess_queen_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_rook_black.png">
+        <Link>gameImg\chess_rook_black.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\chess_rook_white.png">
+        <Link>gameImg\chess_rook_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\pawn_white.png">
+        <Link>gameImg\pawn_white.png</Link>
+      </Content>
+      <Content Include="..\..\..\Pictures\gameImg\pwan_black.png">
+        <Link>gameImg\pwan_black.png</Link>
+      </Content>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
