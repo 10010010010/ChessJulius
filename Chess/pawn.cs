@@ -4,6 +4,10 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Chess;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Reflection;
+using Chess.Properties;
 
 namespace Chess
 {
@@ -31,17 +35,17 @@ namespace Chess
         }
 
         public static void drawPawn( PaintEventArgs e, int x, int y)
-        {
+        { Assembly assembly = Assembly.GetExecutingAssembly();
             Graphics g = e.Graphics;
 
             if (Form1.pubBoard[x,y]==pawnWhiteValue)
             {
-                g.DrawImage(Image.FromFile("\\GameImages\\pawn_white.png"), x*50, y*50,50,50);
+                g.DrawImage(Image.FromStream(assembly.GetManifestResourceStream("pawn_white.png")), x*50, y*50,50,50);
                
             }
             else if (Form1.pubBoard[x,y]==pawnValueBlack)
             
-                g.DrawImage(Image.FromFile(), x*50, y*50,50,50);
+                g.DrawImage(Image.FromFile(@"gameImg\chess_king_white.png"), x*50, y*50,50,50);
                 
         }
 

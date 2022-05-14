@@ -23,6 +23,12 @@ namespace Chess
         public int moveCounter = 0;
         public string projectDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
 
+        public string ProjectDir
+        {
+            get => projectDir;
+            set => projectDir = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
         public static int?[,] pubBoard
         {
             get { return Board; }

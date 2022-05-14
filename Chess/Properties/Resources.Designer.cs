@@ -59,5 +59,14 @@ namespace Chess.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string images {
+            get {
+                return ResourceManager.GetString("images", resourceCulture);
+            }
+        }
     }
 }
