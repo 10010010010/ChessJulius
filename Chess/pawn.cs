@@ -2,6 +2,7 @@
 using System.Drawing;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Chess;
 
@@ -36,14 +37,22 @@ namespace Chess
 
             if (Form1.pubBoard[x,y]==pawnWhiteValue)
             {
-                g.DrawImage(Image.FromFile(@"C:\Users\Juliu\Pictures\gameImg\pawn_white.png"), x*50, y*50,50,50);
+              //  g.DrawImage(Image.FromFile(Directory.GetParent(Environment.CurrentDirectory).Parent.Name+"//gameImg//pawn_white.png"), x*50, y*50,50,50);
                
             }
-            else if (Form1.pubBoard[x,y]==pawnValueBlack)
+
+           
+            else if (Form1.pubBoard[x, y] == pawnValueBlack)
+            {
+                 
+                  g.DrawImage(Image.FromFile(@Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName+"/Chess/gameImg/pwan_black.png"), x*50, y*50,50,50);
+                
+            }
             
-                g.DrawImage(Image.FromFile(@"C:\Users\Juliu\Pictures\gameImg\pwan_black.png"), x*50, y*50,50,50);
+              
                 
         }
+        
 
             
         }

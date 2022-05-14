@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,6 +21,14 @@ namespace Chess
         private int y;
         public static Bitmap boardMap = new Bitmap(400, 400);
         public int moveCounter = 0;
+        public String projectDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+
+        public string ProjectDir
+        {
+            get => projectDir;
+            set => projectDir = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
 
         public static int?[,] pubBoard
         {
@@ -28,11 +37,12 @@ namespace Chess
         }
 
         public Form1()
-        {
+        {  
             InitializeComponent();
             gameTimer.Start();
             panel1.Width = 1000;
             panel1.Height = 1000;
+            MessageBox.Show(projectDir);
         }
 
         public static void board(object sender, EventArgs e)
@@ -180,7 +190,7 @@ namespace Chess
             Board[4, 1] = pawn.pawnBlackValue;
             Board[5, 1] = pawn.pawnBlackValue;
             Board[6, 1] = pawn.pawnBlackValue;
-            Board[7, 1] = pawn.pawnBlackValue;
+         /*   Board[7, 1] = pawn.pawnBlackValue;
             Board[2, 0] = bishop.BishopValueBlack;
             Board[5, 0] = bishop.BishopValueBlack;
             Board[0, 6] = pawn.pawnWhiteValue;
@@ -204,7 +214,7 @@ namespace Chess
             Board[3, 0] = queen.BlackQueenValue;
             Board[3, 7] = queen.WhiteQueenValue;
             Board[4, 0] = king.KingValueBlack;
-            Board[4, 7] = king.KingValueWhite;
+            Board[4, 7] = king.KingValueWhite;*/
         }
     }
 }
