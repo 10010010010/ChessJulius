@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using Chess;
@@ -47,6 +48,17 @@ namespace Chess
             
                 g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/pwan_black.png"), x*50, y*50,50,50);
                 
+        }
+
+        public static void possibleMoves(int X, int Y, int moves)
+        {
+            if (moves == 0)
+            {
+
+            }
+
+
+
         }
 
             
