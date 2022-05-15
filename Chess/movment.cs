@@ -26,9 +26,9 @@ namespace Chess
         public void pieceMovment()
         {
             int?[,] temp = new int?[1,1];
-            Form1.pubBoard[X.Last(), Y.Last()] = temp[0,0];
-            Form1.pubBoard[X.Last(), Y.Last()] = Form1.pubBoard[X.Last() - 1, Y.Last() - 1];
-            temp[0, 0] = Form1.pubBoard[X.Last(), Y.Last()];
+            Form1.Board[X[X.Count-1], Y[Y.Count-1]] = temp[0,0];
+            Form1.Board[X[X.Count - 1], Y[Y.Count - 1]] = Form1.Board[X.Last(), Y.Last()];
+            temp[0, 0] = Form1.Board[X.Last(), Y.Last()];
 
 
 

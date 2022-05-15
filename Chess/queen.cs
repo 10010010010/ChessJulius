@@ -26,12 +26,12 @@ namespace Chess
             
             Graphics g = e.Graphics;
                 
-            if (Form1.pubBoard[x,y]==WhiteQueenValue)
+            if (Form1.Board[x,y]==WhiteQueenValue)
             {
                 g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess_queen_white.png"), x*50, y*50,50,50);
              
             }
-            else if (Form1.pubBoard[x,y]==BlackQueenValue)
+            else if (Form1.Board[x,y]==BlackQueenValue)
             {
                 g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess_queen_black.png"), x*50, y*50,50,50);
               

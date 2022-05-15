@@ -27,12 +27,12 @@ namespace Chess
 
             Graphics g = e.Graphics;
 
-            if (Form1.pubBoard[x,y]==rookWhite)
+            if (Form1.Board[x,y]==rookWhite)
             {
                 g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess_rook_white.png"), x*50, y*50, 50, 50);
 
             }
-            else if (Form1.pubBoard[x,y]==rookBlack)
+            else if (Form1.Board[x,y]==rookBlack)
             {
 
 

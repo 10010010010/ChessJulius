@@ -38,12 +38,12 @@ namespace Chess
         { Assembly assembly = Assembly.GetExecutingAssembly();
             Graphics g = e.Graphics;
 
-            if (Form1.pubBoard[x,y]==pawnWhiteValue)
+            if (Form1.Board[x,y]==pawnWhiteValue)
             {
                 g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/pawn_white.png"), x*50, y*50,50,50);
                
             }
-            else if (Form1.pubBoard[x,y]==pawnValueBlack)
+            else if (Form1.Board[x,y]==pawnValueBlack)
             
                 g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/pwan_black.png"), x*50, y*50,50,50);
                 

@@ -30,12 +30,12 @@ namespace Chess
             
             Graphics g = e.Graphics;
                 
-            if (Form1.pubBoard[x,y]==BishopValueWhite)
+            if (Form1.Board[x,y]==BishopValueWhite)
             {
                 g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess_bishop_white.png"), x*50, y*50,50,50);
              
             }
-            else if (Form1.pubBoard[x,y]==BishopValueBlack)
+            else if (Form1.Board[x,y]==BishopValueBlack)
             {
                 g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess_bishop_black.png"), x*50, y*50,50,50);
               

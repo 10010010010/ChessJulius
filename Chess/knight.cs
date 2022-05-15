@@ -29,12 +29,12 @@ namespace Chess
 
             Graphics g = e.Graphics;
 
-            if (Form1.pubBoard[x,y]==KnightWhiteValue)
+            if (Form1.Board[x,y]==KnightWhiteValue)
             {
                 g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess_knigh_white.png"), x*50, y*50, 50, 50);
 
             }
-            else if (Form1.pubBoard[x,y]==KnightBlackValue)
+            else if (Form1.Board[x,y]==KnightBlackValue)
             {
                 g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess-26774.png"), x*50, y*50, 50, 50);
 

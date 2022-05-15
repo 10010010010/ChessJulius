@@ -16,7 +16,7 @@ namespace Chess
 {
     public partial class Form1 : Form
     {
-        private static int?[,] Board = new int?[8, 8];
+        public static int?[,] Board = new int?[8, 8];
         private int x;
         private int y;
         public static Bitmap boardMap = new Bitmap(400, 400);
@@ -24,12 +24,7 @@ namespace Chess
         public static string projectDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
 
         
-        public static int?[,] pubBoard
-        {
-            get { return Board; }
-            set { Board = value; }
-        }
-
+       
         public Form1()
         {
             InitializeComponent();
@@ -70,7 +65,7 @@ namespace Chess
         {
             Graphics g = e.Graphics;
 
-//sätt till if(Board[i,j]%2==0) för att dela upp vita ich svarta
+
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
