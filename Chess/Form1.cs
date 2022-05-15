@@ -122,12 +122,11 @@ namespace Chess
             Brush red = new SolidBrush(Color.Red);
             Graphics g = e.Graphics;
             g.DrawImage(boardMap, 0, 0);
-            if (movment.X1.Count > 0 && movment.Y1.Count > 0 && moveCounter % 2 == 1)
+            if (movment.X1.Count > 0 && movment.Y1.Count > 0 )
             {
                 g.FillRectangle(red, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
             }
-            else if ((movment.X1.Count > 0 && movment.Y1.Count > 0 && moveCounter % 2 == 0))
-            {
+            else if ((movment.X1.Count > 0 && movment.Y1.Count > 0 )){
                 g.FillRectangle(red, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
             }
 
@@ -159,7 +158,7 @@ namespace Chess
             {
                 for (int j = 0; j <= 8; j++)
                 {
-                    if ((i - 1) * 50 < e.X && e.X < i * 50 && (j - 1) * 50 < e.Y && e.Y < j * 50)
+                    if ((i - 1) * 50 < e.X && e.X < i * 50 && (j - 1) * 50 < e.Y && e.Y < j * 50 && (e.Button & MouseButtons.Left) != 0)
                     {
                         movment.Y1.Add(j);
                         movment.X1.Add(i);

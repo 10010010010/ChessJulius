@@ -23,16 +23,17 @@ namespace Chess
 
         private static List<int> X = new List<int>();
         private static List<int> Y = new List<int>();
+
         public void pieceMovment()
         {
-            int?[,] temp = new int?[1,1];
-            Form1.Board[X[X.Count-1], Y[Y.Count-1]] = temp[0,0];
-            Form1.Board[X[X.Count - 1], Y[Y.Count - 1]] = Form1.Board[X.Last(), Y.Last()];
-            temp[0, 0] = Form1.Board[X.Last(), Y.Last()];
+            int? temp = 0; 
 
-
-
-
+            if (X.Count % 2 == 0)
+            {
+                temp = Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1]; //två steg bak i listan
+                Form1.Board[X[X.Count - 1] - 1, Y[Y.Count - 1] - 1] = Form1.Board[X[X.Count - 2] - 1, X[X.Count - 2] - 1];
+                Form1.Board[X[X.Count - 2] - 1, X[X.Count - 2] - 1] = temp;
+            }
         }
     }
 }
