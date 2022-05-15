@@ -29,14 +29,14 @@ namespace Chess
 
             if (Form1.pubBoard[x,y]==rookWhite)
             {
-                g.DrawImage(Image.FromFile("Chess/GameImges/chess_rook_white.png"), x*50, y*50, 50, 50);
+                g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess_rook_white.png"), x*50, y*50, 50, 50);
 
             }
             else if (Form1.pubBoard[x,y]==rookBlack)
             {
 
 
-                g.DrawImage(Image.FromFile("Chess/GameImges/chess_rook_black.png"), x*50, y*50, 50, 50);
+                g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess_rook_black.png"), x*50, y*50, 50, 50);
 
             }
         }

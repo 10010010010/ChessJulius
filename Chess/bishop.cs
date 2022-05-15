@@ -32,12 +32,12 @@ namespace Chess
                 
             if (Form1.pubBoard[x,y]==BishopValueWhite)
             {
-                g.DrawImage(Image.FromFile("GameImges/chess_bishop_white.png"), x*50, y*50,50,50);
+                g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess_bishop_white.png"), x*50, y*50,50,50);
              
             }
             else if (Form1.pubBoard[x,y]==BishopValueBlack)
             {
-                g.DrawImage(Image.FromFile("GameImges/chess_bishop_black.png"), x*50, y*50,50,50);
+                g.DrawImage(Image.FromFile(Form1.projectDir + "/Chess/gameImages/chess_bishop_black.png"), x*50, y*50,50,50);
               
             }
 
