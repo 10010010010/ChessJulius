@@ -53,7 +53,7 @@ namespace Chess
         public static void possibleMoves(int X, int Y, int moves)
         {
             if (moves == 0)
-            {
+            { 
 
             }
 

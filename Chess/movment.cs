@@ -26,14 +26,19 @@ namespace Chess
 
         public void pieceMovment()
         {
-            int? temp = 0; 
+            int? temp = 0;
 
             if (X.Count % 2 == 0)
             {
                 temp = Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1]; //två steg bak i listan
                 Form1.Board[X[X.Count - 1] - 1, Y[Y.Count - 1] - 1] = temp;
-                Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1] =  0 ;
+                Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1] = 0;
             }
+        }
+
+        public static void possableMovesPawn(object sender, PaintEventArgs e, int x, int y)
+        {
+            
         }
     }
 }

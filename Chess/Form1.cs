@@ -22,7 +22,8 @@ namespace Chess
         public static Bitmap boardMap = new Bitmap(400, 400);
         public int moveCounter = 0;
         public static string projectDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
-
+        public static int?[,] PossebleMoves = new int?[8, 8];
+        public int marker = 0;
         
        
         public Form1()
@@ -122,12 +123,13 @@ namespace Chess
             Brush red = new SolidBrush(Color.Red);
             Graphics g = e.Graphics;
             g.DrawImage(boardMap, 0, 0);
-            if (movment.X1.Count > 0 && movment.Y1.Count > 0 )
+            if (movment.X1.Count > 0 && movment.Y1.Count > 0&& marker % 2 !=0 )
             {
                 g.FillRectangle(red, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
             }
-            else if ((movment.X1.Count > 0 && movment.Y1.Count > 0 )){
-                g.FillRectangle(red, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
+            else if ((movment.X1.Count > 0 && movment.Y1.Count > 0 && marker %2==0)){
+                g.FillRectangle(Brushes.Green, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
+                
             }
 
             this.BackColor = Color.Bisque;
@@ -141,17 +143,15 @@ namespace Chess
         }
 
 
-        private void panel1_Click(object sender, EventArgs e)
-        {
-        }
-
+      
         private void panel1_MouseClick(object sender, MouseEventArgs e)
         {
             Brush brush = new SolidBrush(Color.Red);
-            if (movment.X1.Count > 1 && movment.Y1.Count > 1 && moveCounter % 2 == 0)
+            if (movment.X1.Count != 0 && movment.X1.Count % 2 ==0 && (e.Button&MouseButtons.Right)!=0)
             {
                 movment mvnt = new movment();
                 mvnt.pieceMovment();
+                moveCounter++;
             }
 
             for (int i = 0; i <= 8; i++)
@@ -162,13 +162,30 @@ namespace Chess
                     {
                         movment.Y1.Add(j);
                         movment.X1.Add(i);
+                        marker++;
                     }
                 }
             }
         }
 
+
+        public static void resetBoard()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    Board[i, j] = null;
+                }
+                
+            }
+            
+            
+        }
         private void button1_Click(object sender, EventArgs e)
         {
+            
+            resetBoard();
             board(this, EventArgs.Empty);
             Board[0, 1] = pawn.pawnBlackValue;
             Board[1, 1] = pawn.pawnBlackValue;
@@ -202,6 +219,11 @@ namespace Chess
             Board[3, 7] = queen.WhiteQueenValue;
             Board[4, 0] = king.KingValueBlack;
             Board[4, 7] = king.KingValueWhite;
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
