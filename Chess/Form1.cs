@@ -128,12 +128,30 @@ namespace Chess
             {
                 g.FillRectangle(red, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
                 showAvalebleMoves = true;
+                Array.Clear(PossebleMoves,0,PossebleMoves.Length);
             }
             else if ((movment.X1.Count > 0 && movment.Y1.Count > 0 && marker % 2 == 0))
             {
                 showAvalebleMoves = false;
                 g.FillRectangle(Brushes.Green, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
 
+            }
+
+            if (showAvalebleMoves)
+            {movment.drawPossableMoves(movment.X1.Last()-1,movment.Y1.Last()-1);
+                for (int i = 0; i < 8; i++)
+                {
+                    for (int j = 0; j < 8; j++)
+                    {
+                        if (PossebleMoves[i,j]==true )
+                        {
+                            g.FillRectangle(Brushes.Aqua, (i-1)*50,(j-1)*50,50,50);
+                        }
+                        
+                    }
+                    
+                }
+                
             }
 
 

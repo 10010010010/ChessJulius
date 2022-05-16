@@ -45,14 +45,14 @@ namespace Chess
                     switch (Form1.Board[X, Y])
                     {
                         case 1:
-                            if (movment.X.Last() == i && movment.Y.Last() == j + 1)
+                            if (movment.X.Last() == i && movment.Y.Last() == j - 1)
                             {
                                 Form1.PossebleMoves[i, j] = true;
                             }
 
                             break;
                         case 2:
-                            if (movment.X.Last() == i && movment.Y.Last() == j - 1)
+                            if (movment.X.Last() == i && movment.Y.Last() == j + 1)
                             {
                                 Form1.PossebleMoves[i, j] = true;
                             }
