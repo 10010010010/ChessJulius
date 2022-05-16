@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Chess;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using Chess.Properties;
@@ -50,17 +51,11 @@ namespace Chess
                 
         }
 
-        public static void possibleMoves(int X, int Y, int moves)
-        {
-            if (moves == 0)
-            { 
-
-            }
+        
 
 
-
-        }
+    }
 
             
         }
-    }
+    

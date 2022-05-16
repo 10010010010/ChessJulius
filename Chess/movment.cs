@@ -36,9 +36,103 @@ namespace Chess
             }
         }
 
-        public static void possableMovesPawn(object sender, PaintEventArgs e, int x, int y)
+        public static void drawPossableMoves(int X, int Y)
         {
-            
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    switch (Form1.Board[X, Y])
+                    {
+                        case 1:
+                            if (movment.X.Last() == i && movment.Y.Last() == j + 1)
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+                            }
+
+                            break;
+                        case 2:
+                            if (movment.X.Last() == i && movment.Y.Last() == j - 1)
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+                            }
+
+                            break;
+                        case 3:
+                            if (Math.Abs(movment.X.Last() - i) == Math.Abs(movment.Y.Last() - j))
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+                            }
+
+                            break;
+                        case 4:
+                            if (Math.Abs(movment.X.Last() - i) == Math.Abs(movment.Y.Last() - j))
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+                            }
+
+                            break;
+                        case 5:
+                            if ((Math.Abs(movment.X.Last() - j) == 2 && Math.Abs(movment.Y.Last() - i) == 1) ||
+                                (Math.Abs(movment.X.Last() - i) == 2 && Math.Abs(movment.Y.Last() - j) == 1))
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+                            }
+
+                            break;
+                        case 6:
+                            if ((Math.Abs(movment.X.Last() - j) == 2 && Math.Abs(movment.Y.Last() - i) == 1) ||
+                                   (Math.Abs(movment.X.Last() - i) == 2 && Math.Abs(movment.Y.Last() - j) == 1))
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+                            }
+
+                            break;
+                        case 7:
+                            if (movment.X.Last() == i || movment.Y.Last() == j)
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+
+                            }
+
+                            break;
+                        case 8:  
+                            if (movment.X.Last() == i || movment.Y.Last() == j)
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+
+                            }
+
+                            break;
+                        case 9:
+                            if (Math.Abs(movment.X.Last() - i) == Math.Abs(movment.Y.Last() - j) || movment.X.Last() == i || movment.Y.Last() == j)
+                            {
+                                Form1.PossebleMoves[i, j] = true; 
+                            }
+
+                            break;
+                        case 10: 
+                            if (Math.Abs(movment.X.Last() - i) == Math.Abs(movment.Y.Last() - j) || movment.X.Last() == i || movment.Y.Last() == j)
+                            {
+                                Form1.PossebleMoves[i, j] = true; 
+                            }
+
+                            break;
+                        case 11:
+                            if (Math.Abs(movment.X.Last()-1) == 1 && Math.Abs(movment.Y.Last()-1)==1)
+                            {
+                                Form1.PossebleMoves[i, j] = true; 
+                            }
+                            break;
+                        case 12:
+                            if (Math.Abs(movment.X.Last()-1) == 1 && Math.Abs(movment.Y.Last()-1)==1)
+                            {
+                                Form1.PossebleMoves[i, j] = true; 
+                            }
+                            break;
+                    }
+                }
+            }
         }
     }
 }
