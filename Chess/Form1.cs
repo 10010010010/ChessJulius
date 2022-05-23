@@ -145,7 +145,7 @@ namespace Chess
                     {
                         if (PossebleMoves[i,j]==true )
                         {
-                            g.FillRectangle(Brushes.Aqua, (i-1)*50,(j-1)*50,50,50);
+                            g.FillRectangle(Brushes.Aqua, (i)*50,(j)*50,50,50);
                         }
                         
                     }
