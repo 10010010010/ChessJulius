@@ -33,10 +33,11 @@ namespace Chess
             gameTimer.Start();
             panel1.Width = 1000;
             panel1.Height = 1000;
+            button1.Text = "Reset";
         }
 
         public static void board(object sender, EventArgs e)
-        {
+        {  // skapar en bitmap som ser ut som en bräda, har gjort såhär för att undvika att måla om brädet vaje gång programmet körs
             using (Graphics g = Graphics.FromImage(boardMap))
             {
                 Pen Black = new Pen(Color.Black, 2);
@@ -67,7 +68,8 @@ namespace Chess
         {
             Graphics g = e.Graphics;
 
-
+            // med hjälp av en två dimentionel array målar denna pjäserna på deras plats.
+            // Varje pjäs har sitt egna värde som används för att veta vilken pjäs som ska vara på vilek plats platsen till exempel har en vit bonde värdet 2 och en vit häst har värdet 
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
@@ -120,10 +122,14 @@ namespace Chess
 
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+        {   // här ritas alla viktiga object till panelen
             Brush red = new SolidBrush(Color.Red);
             Graphics g = e.Graphics;
             g.DrawImage(boardMap, 0, 0);
+            //Beroende på vilken mängd clicks som har gjorts på brädan får vi olika färger som signalerar olika saker
+            // Röd är pjäsen som du försöker flytta
+            // Grön visar platsen du vill hoppa till 
+            // och du använder högerclick för att utföra draget
             if (movment.X1.Count > 0 && movment.Y1.Count > 0 && marker % 2 != 0)
             {
                 g.FillRectangle(red, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
@@ -136,7 +142,8 @@ namespace Chess
                 g.FillRectangle(Brushes.Green, (movment.X1.Last() - 1) * 50, (movment.Y1.Last() - 1) * 50, 50, 50);
 
             }
-
+   // Här ritas alla möjliga drag efter possable moves arrayen
+   // arrayen blir ränsad varje gång man byter pjäs så att den bara visar dem möjliga dragen för pjäsen i fokus
             if (showAvalebleMoves)
             {movment.drawPossableMoves(movment.X1.Last()-1,movment.Y1.Last()-1);
                 for (int i = 0; i < 8; i++)
@@ -145,7 +152,7 @@ namespace Chess
                     {
                         if (PossebleMoves[i,j]==true )
                         {
-                            g.FillRectangle(Brushes.Aqua, (i-1)*50,(j-1)*50,50,50);
+                            g.FillRectangle(Brushes.Aqua, (i)*50,(j)*50,50,50);
                         }
                         
                     }
@@ -177,7 +184,7 @@ namespace Chess
                 mvnt.pieceMovment();
                 moveCounter++;
             }
-
+          // Denna koden kollar vart på skärmen musen är när du klickar och sätter in det i rutnätet som finns 
             for (int i = 0; i <= 8; i++)
             {
                 for (int j = 0; j <= 8; j++)
@@ -186,13 +193,15 @@ namespace Chess
                     {
                         movment.Y1.Add(j);
                         movment.X1.Add(i);
-                        marker++;
+                        marker++; 
+                        
                     }
                 }
             }
         }
 
-
+       
+       // Koden som ränsar bärdan 
         public static void resetBoard()
         {
             for (int i = 0; i < 8; i++)
@@ -206,6 +215,12 @@ namespace Chess
             
             
         }
+        
+        
+        /*
+         *Sätter in alla pjäserna på brädan i deras korrekta startkordinat varje gång man lickar på knappen, i princip fungerar den som en reset knapp
+         * 
+         */
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -248,6 +263,13 @@ namespace Chess
         private void panel1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            label1.Text="1.Använd musen för att välja pjäsen du vill flytta" +Environment.NewLine+"2.Vänster clicka för att välja pjäsen du vill förflytta, den borde lysa up i röd" +Environment.NewLine+
+                        "3. Välj platsen du vill flytta pjäsen till genom att vänster clicka på en annan position" +Environment.NewLine+
+                        "4. För att utföra draget högerclickar du på valfri plats på skärmen";
         }
     }
 }
