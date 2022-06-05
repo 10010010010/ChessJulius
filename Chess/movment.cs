@@ -39,8 +39,13 @@ namespace Chess
                     Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1] = null;
                     Form1.moveCounter++;
 
+                }else
+                {
+                    MessageBox.Show("du kan inte göra det draget");
+
                 }
             }
+            
         }
 
         public static void drawPossableMoves(int X, int Y)
@@ -154,6 +159,7 @@ namespace Chess
                             {
                                 Form1.PossebleMoves[i, j] = true;
                             }
+                            
 
                             break;
                         case 11:
@@ -176,6 +182,8 @@ namespace Chess
 
 
                             }
+
+                           
 
                             break;
                         case 12:
