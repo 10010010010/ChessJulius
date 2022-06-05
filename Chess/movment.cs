@@ -24,16 +24,22 @@ namespace Chess
  // dem kommer från panel1_mouseClick funktionen
         private static List<int> X = new List<int>();
         private static List<int> Y = new List<int>();
-
+       
         public void pieceMovment()
         {
-            int? temp = 0; 
+            int? temp;
+            
   // Dehär är koden som rör på pjäserna och fungerar genom att förflytta det första värdet på den andra vädets plats och sen sätta första platsen = 0
-            if (X.Count % 2 == 0)
+            if (X.Count % 2 == 0 )
             {
-                temp = Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1]; //två steg bak i listan
-                Form1.Board[X[X.Count - 1] - 1, Y[Y.Count - 1] - 1] = temp;
-                Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1] =  0 ;
+                if (Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1]%2 != Form1.Board[X[X.Count - 1] - 1, Y[Y.Count - 1] - 1] % 2 && Form1.PossebleMoves[X[X.Count - 1] - 1, Y[Y.Count - 1] - 1]==true && Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1] % 2 ==Form1.moveCounter%2)
+                {
+                    temp = Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1]; //två steg bak i listan
+                    Form1.Board[X[X.Count - 1] - 1, Y[Y.Count - 1] - 1] = temp;
+                    Form1.Board[X[X.Count - 2] - 1, Y[Y.Count - 2] - 1] = null;
+                    Form1.moveCounter++;
+
+                }
             }
         }
 
@@ -51,20 +57,38 @@ namespace Chess
                             if (lastx == i && lasty == j - 1)
                             {
                                 Form1.PossebleMoves[i, j] = true;
-                            }if (lastx == i && lasty == j -2 && Form1.moveCounter<3)
+                            }if (lastx == i && lasty == j -2 && Form1.moveCounter<2)
                             {
                                 Form1.PossebleMoves[i, j] = true;
                             }
-
+                           
+                            if (Form1.Board[i,j] != null && i==lastx-1 && j==lasty+1 && Form1.Board[i,j] % 2 != 1 )
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+                            }
+                            if (Form1.Board[i,j] != null && i==lastx+1 && j == lasty+1 && Form1.Board[i,j]%2 != 1)
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+                            }
                             break;
                         case 2:
                             if (lastx == i && lasty == j + 1)
                             {
                                 Form1.PossebleMoves[i, j] = true;
-                            }if (lastx == i && lasty == j + 2 && Form1.moveCounter<3)
+                            }if (lastx == i && lasty == j + 2 && Form1.moveCounter<2)
                             {
                                 Form1.PossebleMoves[i, j] = true;
                             }
+
+                            if (Form1.Board[i,j] != null && i==lastx-1 && j==lasty-1  && Form1.Board[i,j]%2 != 0)
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+                            }
+                            if (Form1.Board[i,j] != null && i==lastx+1 && j == lasty && Form1.Board[i,j]%2 != 0 )
+                            {
+                                Form1.PossebleMoves[i, j] = true;
+                            }
+
 
                             break;
                         case 3:
@@ -173,6 +197,7 @@ namespace Chess
 
 
                             }
+
 
                             break;
                     }

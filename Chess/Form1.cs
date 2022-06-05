@@ -34,6 +34,7 @@ namespace Chess
             panel1.Width = 1000;
             panel1.Height = 1000;
             button1.Text = "Reset";
+            label1_Click(this, EventArgs.Empty);;
         }
 
         public static void board(object sender, EventArgs e)
@@ -182,7 +183,7 @@ namespace Chess
             {
                 movment mvnt = new movment();
                 mvnt.pieceMovment();
-                moveCounter++;
+               
             }
           // Denna koden kollar vart på skärmen musen är när du klickar och sätter in det i rutnätet som finns 
             for (int i = 0; i <= 8; i++)
@@ -225,6 +226,7 @@ namespace Chess
         {
             
             resetBoard();
+            moveCounter = 0;
             board(this, EventArgs.Empty);
             Board[0, 1] = pawn.pawnBlackValue;
             Board[1, 1] = pawn.pawnBlackValue;

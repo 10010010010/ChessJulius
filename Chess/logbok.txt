@@ -1,0 +1,20 @@
+﻿
+Datumen är när skillnaderna pushades till github och kanske inte är helt perfekta då jag inte pushar om saker inte fungerar som jag vill
+22-04-29 
+Skapar ryggraden av projektet till exempel panelen, timer och påbörjar skrivandet i movment classen.
+04-30
+löser rörelse på brädan och designar pjäsernas grafik
+05-02
+skapar alla pjäsklasserna och ritlogiken samt påbörjar muskontroll metoden
+05-14
+Löser problemet med att images inte vill fungera även när de är embeded resource och gör färdigt muskontroll metoden.
+05-16 
+Blir färdig med den grund rörelserna för de flesta pjäserna och blir helt färdig med draglogiken.
+05-17
+ändrar lite på pjäslogiken
+05-23
+Bugfixing 
+05- 24
+Bugfixing
+05-27
+Fixar det sista problemen med möjliga grund dragen.

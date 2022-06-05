@@ -1,0 +1,1 @@
+﻿Detta projektet är ett väldigt enkelt schack spel som inkulderar simpla rörelse förslag. 
