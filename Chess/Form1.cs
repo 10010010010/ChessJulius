@@ -269,8 +269,8 @@ namespace Chess
 
         private void label1_Click(object sender, EventArgs e)
         {
-            label1.Text="1.Använd musen för att välja pjäsen du vill flytta" +Environment.NewLine+"2.Vänster clicka för att välja pjäsen du vill förflytta, den borde lysa up i röd" +Environment.NewLine+
-                        "3. Välj platsen du vill flytta pjäsen till genom att vänster clicka på en annan position" +Environment.NewLine+
+            label1.Text="1.Använd musen för att välja pjäsen du vill flytta" +Environment.NewLine+"2.Vänster clicka för att välja pjäsen du vill förflytta, den borde lysa up i rött" +Environment.NewLine+
+                        "3. Välj platsen du vill flytta pjäsen till genom att vänster clicka på en annan position, platsen borde lysa grönt" +Environment.NewLine+
                         "4. För att utföra draget högerclickar du på valfri plats på skärmen";
         }
     }

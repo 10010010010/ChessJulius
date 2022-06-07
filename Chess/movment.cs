@@ -24,7 +24,7 @@ namespace Chess
  // dem kommer från panel1_mouseClick funktionen
         private static List<int> X = new List<int>();
         private static List<int> Y = new List<int>();
-       
+        public static bool rookardWhiteRight=true, rookkardWhiteLeft=true, rookardBlackRight=true, rookardBlackLeft=true; 
         public void pieceMovment()
         {
             int? temp;
@@ -205,7 +205,6 @@ namespace Chess
 
 
                             }
-
 
                             break;
                     }
